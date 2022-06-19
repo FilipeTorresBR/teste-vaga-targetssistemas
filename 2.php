@@ -6,9 +6,9 @@ function verificar($valor_verificar) {
 	$pertence = 0;
 	$fibbonacci = array($valor_anterior, $valor_atual);
 	while ($valor_atual < $valor_verificar) {
-		$valor_anterior_backup = $valor_anterior;
+		$valor_anterior_copia = $valor_anterior;
 		$valor_anterior = $valor_atual;
-		$valor_atual = $valor_anterior_backup + $valor_atual;
+		$valor_atual = $valor_anterior_copia + $valor_atual;
 		array_push($fibbonacci, $valor_atual);
 	}
 
