@@ -1,42 +1,36 @@
-<?php 
+<?php
+$json = file_get_contents('dados.json');
+$json_data = json_decode($json,true);
 
-//letra A
-for($i = 1; $i<10;$i= $i+2){
-    echo $i. "\n";
+$min = 22174.1664;
+$max = 0;
+$soma = 0;
+$dias_media = 0;
+$dias_uteis = 0;
+foreach ($json_data as $key => $value) {
+    foreach ($value as $key => $val) {
+        if($key == "valor" && $val > 0.0){
+            if($min > $val){
+                $min = $val;
+            }
+            if($max < $val){
+                $max = $val;
+            }
+
+            $soma += $val;
+            $dias_uteis += 1;
+        }
+	}
+}          
+$media = $soma / $dias_uteis;
+
+foreach ($json_data as $key => $value) {
+    foreach ($value as $key => $val) {
+        if($val > $media && $key == "valor" && $val != 0.0){
+            $dias_media +=1;
+        }
+	}
 }
-// O proximo elemento é o 9
+echo "Minimo: $min; Maximo: $max; Dias acima da media: $dias_media";
+?>
 
-//letra B
-for($i = 1; $i<129; $i = $i * 2){
-    echo $i. "\n";
-}
-// O proximo elemento é o 128
-
-//letra C
-for($i = 1; $i<8; $i++){
-    echo $i * $i . "\n";
-}
-// O proximo elemento é o 49
-
-//letra D
-for($i = 2; $i<11; $i= $i+2){
-    echo $i * $i . "\n";
-}
-// O proximo elemento é o 100
-
-
-
-//letra E
-$valor_anterior = 0;
-$valor_atual = 1;
-for($i = 2; $i<8; $i= $i+2){
-    $valor_anterior_backup = $valor_anterior;
-    $valor_anterior = $valor_atual;
-    $valor_atual = $valor_anterior_backup + $valor_atual;
-    
-    echo $valor_atual . "\n";
-}
-// O proximo elemento é o 13
-
-//letra F
-/*Esta sequencia trata dos numeros que começam com a letra D, logo a proxima seria 200*/
