@@ -6,27 +6,26 @@ d = []
 for x in range(1, 10, 2):
     a.append(x)
 print("Questão A: ", a)
-# O proximo elemento é o 9
-
+# São numeros impares, proximo elemento é o 9
 
 #letra B
 for x in range(1, 8):
     b.append(2**x)
 print("Questão B: ", b)
-# O proximo elemento é o 128
+# São resultados de expoentes de base dois, o proximo elemento é o 128
     
 #letra C
 for x in range(1, 8):
     c.append(x * x)
 print("Questão C: ", c)
-# O proximo elemento é o 49
+# São quadrados perfeitos, o proximo elemento é o 49
     
 #letra D
 for x in range(2, 11, 2):
     d.append(x*x)
 print("Questão D: ", d)
 
-# O proximo elemento é o 100
+# São quadrados perfeitos de numeros pares, o proximo elemento é o 100
 
 #letra E
 n = 13
@@ -39,7 +38,7 @@ while sequencia[len(sequencia)-1] <= n:
         print("Questão E: ", sequencia[:n])
         break
 
-# O proximo elemento é o 13
+# É a sequencia fibonacci, o proximo elemento é o 13
 
 #letra F
 #Esta sequencia trata dos numeros que começam com a letra D, logo a proxima seria 200
